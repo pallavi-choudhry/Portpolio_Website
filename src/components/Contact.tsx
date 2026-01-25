@@ -63,15 +63,17 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -4 }}
-                className="glass-hover p-6 rounded-2xl flex flex-col items-center gap-3 group"
+                whileHover={{ y: -4, scale: 1.02 }}
+                className="relative p-6 rounded-2xl flex flex-col items-center gap-3 group bg-card/60 backdrop-blur-sm border border-border/50 hover:border-primary/40 hover:bg-card/80 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-gradient-primary transition-all">
-                  <link.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center group-hover:from-primary group-hover:to-accent transition-all duration-300 shadow-lg shadow-primary/5">
+                  <link.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                 </div>
-                <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
                   {link.label}
                 </span>
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity blur-xl -z-10" />
               </motion.a>
             ))}
           </div>

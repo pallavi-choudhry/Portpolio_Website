@@ -18,29 +18,32 @@ const Footer = () => {
           </a>
 
           {/* Social links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <motion.a
-              whileHover={{ scale: 1.1, y: -2 }}
+              whileHover={{ scale: 1.15, y: -3 }}
+              whileTap={{ scale: 0.95 }}
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 glass-hover rounded-lg text-muted-foreground hover:text-primary"
+              className="p-3 rounded-xl bg-card/60 backdrop-blur-sm border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/40 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
             >
               <Github className="w-5 h-5" />
             </motion.a>
             <motion.a
-              whileHover={{ scale: 1.1, y: -2 }}
+              whileHover={{ scale: 1.15, y: -3 }}
+              whileTap={{ scale: 0.95 }}
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 glass-hover rounded-lg text-muted-foreground hover:text-primary"
+              className="p-3 rounded-xl bg-card/60 backdrop-blur-sm border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/40 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
             >
               <Linkedin className="w-5 h-5" />
             </motion.a>
             <motion.a
-              whileHover={{ scale: 1.1, y: -2 }}
+              whileHover={{ scale: 1.15, y: -3 }}
+              whileTap={{ scale: 0.95 }}
               href="mailto:your.email@example.com"
-              className="p-2 glass-hover rounded-lg text-muted-foreground hover:text-primary"
+              className="p-3 rounded-xl bg-card/60 backdrop-blur-sm border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/40 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
             >
               <Mail className="w-5 h-5" />
             </motion.a>
