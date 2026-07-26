@@ -1,67 +1,126 @@
 import { motion } from "framer-motion";
-import { Heart, Github, Linkedin, Mail } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ArrowUp,
+} from "lucide-react";
 
 const Footer = () => {
   return (
-    <motion.footer
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="py-12 px-6 border-t border-border/50"
-    >
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo */}
-          <a href="#" className="font-mono text-xl font-bold text-primary">
-            {"<Dev />"}
-          </a>
+    <footer className="bg-[#080812] border-t border-purple-500/20 mt-24">
+      <div className="max-w-7xl mx-auto px-6 py-14">
 
-          {/* Social links */}
-          <div className="flex items-center gap-3">
-            <motion.a
-              whileHover={{ scale: 1.15, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-xl bg-card/60 backdrop-blur-sm border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/40 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
-            >
-              <Github className="w-5 h-5" />
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.15, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-xl bg-card/60 backdrop-blur-sm border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/40 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
-            >
-              <Linkedin className="w-5 h-5" />
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.15, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              href="mailto:your.email@example.com"
-              className="p-3 rounded-xl bg-card/60 backdrop-blur-sm border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/40 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
-            >
-              <Mail className="w-5 h-5" />
-            </motion.a>
-          </div>
+        {/* Top */}
+        <div className="grid md:grid-cols-3 gap-10">
 
-          {/* Copyright */}
-          <div className="text-center md:text-right">
-          <p className="font-mono text-sm text-muted-foreground flex items-center gap-2">
-              Designed & Built with{" "}
-              <Heart className="w-4 h-4 text-destructive fill-destructive animate-pulse" />
+          {/* Left */}
+          <div>
+            <h2 className="text-2xl font-bold text-white">
+              Pallavi <span className="text-purple-400">Choudhary</span>
+            </h2>
+
+            <p className="text-purple-300 mt-2 font-medium">
+              Full Stack MERN Developer
             </p>
-            <p className="font-mono text-xs text-muted-foreground/60 mt-1">
-              © {new Date().getFullYear()} All rights reserved.
+
+            <p className="text-gray-400 mt-4 leading-7">
+              Passionate about building scalable,
+              responsive and modern web applications
+              using React.js, Node.js, Express.js and MongoDB.
             </p>
           </div>
+
+          {/* Center */}
+          <div className="flex flex-col gap-4 md:items-center">
+
+            <h3 className="text-white font-semibold">
+              Quick Links
+            </h3>
+
+            <a href="#about" className="text-gray-400 hover:text-purple-400 transition">
+              About
+            </a>
+
+            <a href="#skills" className="text-gray-400 hover:text-purple-400 transition">
+              Skills
+            </a>
+
+            <a href="#projects" className="text-gray-400 hover:text-purple-400 transition">
+              Projects
+            </a>
+
+            <a href="#contact" className="text-gray-400 hover:text-purple-400 transition">
+              Contact
+            </a>
+
+          </div>
+
+          {/* Right */}
+          <div className="md:text-right">
+
+            <h3 className="text-white font-semibold">
+              Connect
+            </h3>
+
+            <div className="flex md:justify-end gap-4 mt-5">
+
+              <motion.a
+                whileHover={{ scale: 1.15 }}
+                href="https://github.com/your-github"
+                target="_blank"
+                className="w-11 h-11 rounded-full border border-purple-500/30 flex items-center justify-center text-gray-300 hover:bg-purple-600 hover:text-white transition"
+              >
+                <Github size={20} />
+              </motion.a>
+
+              <motion.a
+                whileHover={{ scale: 1.15 }}
+                href="https://linkedin.com/in/your-linkedin"
+                target="_blank"
+                className="w-11 h-11 rounded-full border border-purple-500/30 flex items-center justify-center text-gray-300 hover:bg-purple-600 hover:text-white transition"
+              >
+                <Linkedin size={20} />
+              </motion.a>
+
+              <motion.a
+                whileHover={{ scale: 1.15 }}
+                href="mailto:your@email.com"
+                className="w-11 h-11 rounded-full border border-purple-500/30 flex items-center justify-center text-gray-300 hover:bg-purple-600 hover:text-white transition"
+              >
+                <Mail size={20} />
+              </motion.a>
+
+            </div>
+
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="inline-flex items-center gap-2 mt-8 text-purple-400 hover:text-purple-300 transition"
+            >
+              Back to Top
+              <ArrowUp size={18} />
+            </button>
+
+          </div>
+
         </div>
+
+        {/* Bottom */}
+
+        <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+
+          <p className="text-gray-500 text-sm">
+            © {new Date().getFullYear()} Pallavi Choudhary. All Rights Reserved.
+          </p>
+
+          <p className="text-gray-500 text-sm">
+            Built with React • TypeScript • Tailwind CSS
+          </p>
+
+        </div>
+
       </div>
-    </motion.footer>
+    </footer>
   );
 };
 

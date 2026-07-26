@@ -20,23 +20,23 @@ const SkillBar = ({ skill, index }: { skill: typeof skills[0]; index: number }) 
     transition={{ duration: 0.5, delay: index * 0.1 }}
     className="group"
   >
-    <div className="glass-hover p-4 rounded-xl">
+    <div className="border border-purple-500/20 hover:border-purple-500/40 p-4 rounded-xl transition-all duration-300 bg-white/5 backdrop-blur-sm">
       <div className="flex justify-between items-center mb-3">
         <div className="flex items-center gap-3">
           <span className="text-xl">{skill.icon}</span>
-          <span className="font-mono text-sm text-foreground font-medium">{skill.name}</span>
+          <span className="font-mono text-sm text-white font-medium">{skill.name}</span>
         </div>
-        <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded-full">
+        <span className="text-xs font-mono text-purple-400 bg-purple-500/10 px-2 py-1 rounded-full border border-purple-500/20">
           {skill.level}%
         </span>
       </div>
-      <div className="h-2 bg-secondary/50 rounded-full overflow-hidden">
+      <div className="h-2 bg-purple-500/10 rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${skill.level}%` }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: index * 0.1 + 0.3, ease: "easeOut" }}
-          className="h-full bg-gradient-primary rounded-full relative"
+          className="h-full bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full relative shadow-lg shadow-purple-500/20"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-gradient" />
         </motion.div>
@@ -51,11 +51,12 @@ const Skills = () => {
   const tools = skills.filter((s) => s.category === "Tools");
 
   return (
-    <section id="skills" className="py-24 px-6 md:px-12 lg:px-24 relative">
-      {/* Background decoration */}
+    <section id="skills" className="py-14 px-6 md:px-12 lg:px-24 relative bg-[#0a0a0f]">
+      {/* Background decoration - matching hero style */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-5xl mx-auto relative z-10">
@@ -65,12 +66,14 @@ const Skills = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="flex items-center gap-4 text-2xl md:text-3xl font-bold text-foreground mb-4">
-            <span className="font-mono text-primary text-xl">02.</span>
-            <span className="text-gradient">Skills & Technologies</span>
-            <span className="h-px bg-gradient-to-r from-border to-transparent flex-1 max-w-xs" />
+          <h2 className="flex items-center gap-2 text-2xl md:text-3xl font-bold text-white mb-4">
+            {/* <span className="font-mono text-purple-400 text-xl">02.</span> */}
+            <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
+              Skills & Technologies
+            </span>
+            <span className="h-px bg-gradient-to-r from-purple-500/50 to-transparent flex-1 max-w-xs" />
           </h2>
-          <p className="text-muted-foreground mb-12 max-w-2xl">
+          <p className="text-gray-300 mb-12 max-w-2xl">
             Technologies I've been working with recently to build modern web applications.
           </p>
 
@@ -84,10 +87,10 @@ const Skills = () => {
               className="space-y-4"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-bold shadow-lg shadow-purple-500/20">
                   F
                 </div>
-                <h3 className="text-lg font-semibold text-foreground">Frontend</h3>
+                <h3 className="text-lg font-semibold text-white">Frontend</h3>
               </div>
               <div className="space-y-3">
                 {frontend.map((skill, index) => (
@@ -105,10 +108,10 @@ const Skills = () => {
               className="space-y-4"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-bold shadow-lg shadow-purple-500/20">
                   B
                 </div>
-                <h3 className="text-lg font-semibold text-foreground">Backend</h3>
+                <h3 className="text-lg font-semibold text-white">Backend</h3>
               </div>
               <div className="space-y-3">
                 {backend.map((skill, index) => (
@@ -126,10 +129,10 @@ const Skills = () => {
               className="space-y-4"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-bold shadow-lg shadow-purple-500/20">
                   T
                 </div>
-                <h3 className="text-lg font-semibold text-foreground">Tools</h3>
+                <h3 className="text-lg font-semibold text-white">Tools</h3>
               </div>
               <div className="space-y-3">
                 {tools.map((skill, index) => (
